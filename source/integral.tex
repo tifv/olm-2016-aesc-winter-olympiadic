@@ -1,0 +1,52 @@
+% $groups$delegate: false
+% $groups$delegate$into: false
+% $groups$matter: false
+% $groups$matter$into: false
+
+% $matter[-header,-no-header]:
+% - .[no-header]
+
+% $matter[-matter-guard,no-header]:
+% - verbatim: \begingroup \let\ifsourcelinks\iftrue
+%   condition: source-link
+% - .[matter-guard]
+% - verbatim: \endgroup % \let\ifsourcelinks
+%   condition: source-link
+
+\begingroup
+\providecommand\ifsourcelinks{\iffalse}
+\providecommand\url[1]{\texttt{#1}}
+\providecommand\href[2]{#2}
+
+\title{%
+    Зимняя олимпиадная школа СУНЦ МГУ --- 2016
+    (материалы секции математики)}
+\author{%
+    редактор: Ю.\,В.\,Тихонов \\
+    \texttt{\href{mailto:july.tikh@gmail.com}{july.tikh@gmail.com}}}
+\date{8--12 января 2016 г.}
+
+\maketitle
+
+\subsection*{Немного о~группах}
+
+Занятия проходили в~трех группах: 9-1, 9-2 и~10--11.
+
+Школьники 9 класса были разбиты на~группы по~итогам вступительной олимпиады.
+
+\subsection*{Немного о~структуре}
+
+Материалы разбиты по~группам, в~пределах каждой группы разбиты по~темам.
+
+Материалы, общие для нескольких групп, дублируются (это касается только
+вступительной и~заключительной олимпиад, на~самом деле).
+\ifsourcelinks
+Все материалы сопровождаются ссылками на~исходные файлы \LaTeX.
+\fi
+
+Занятия Владимира Леонидивича Натяганова проходили по~задачам из~книги
+\\
+В.\,Л.\,Натяганов, Л.\,М.\,Лужина, <<Методы решения задач с~параметрами>>.
+
+\endgroup % \def\ifsourcelinks \def\url
+

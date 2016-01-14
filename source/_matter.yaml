@@ -1,0 +1,61 @@
+$groups$matter: true
+
+Integral:
+  $groups$delegate: false
+  $groups$delegate$into: false
+  $groups$matter: false
+  $groups$matter$into: false
+
+  $style:
+  - document class: book
+    options: [10pt, a4paper]
+  - delegate: ..[no-document-class]
+
+  $matter[-add-toc]:
+  - .[add-toc]
+
+  $matter[-integral,add-toc]:
+
+  - error:
+      "'source-link' and 'print' options are incompatible"
+    condition: [source-link, print]
+
+  - preamble package: hyperref
+    condition: -print
+  - preamble verbatim: \hypersetup{colorlinks}
+    provide: hypersetup:colorlinks
+    condition: [source-link, -print]
+
+  - verbatim: \frontmatter
+  - - delegate: /integral[-add-toc]
+  - verbatim: \tableofcontents
+
+  - verbatim: \mainmatter
+  - delegate: .[integral]
+
+  $matter[integral]:
+  - delegate: g9r2
+  - delegate: g9r1
+  - delegate: g1011
+
+  g9r2:
+    $matter:
+    - verbatim: \chapter{9-2}
+    - verbatim: \begin{jeolmlabelspace}{g9r2}
+    - delegate: /[g9r2]
+    - verbatim: \end{jeolmlabelspace}
+
+  g9r1:
+    $matter:
+    - verbatim: \chapter{9-1}
+    - verbatim: \begin{jeolmlabelspace}{g9r1}
+    - delegate: /[g9r1]
+    - verbatim: \end{jeolmlabelspace}
+
+  g1011:
+    $matter:
+    - verbatim: \chapter{10--11}
+    - verbatim: \begin{jeolmlabelspace}{g1011}
+    - delegate: /[g1011]
+    - verbatim: \end{jeolmlabelspace}
+
