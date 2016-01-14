@@ -1,0 +1,25 @@
+!!omap
+
+- $large$common$timetable: true
+- $common$timetable: &common-timetable !!omap
+  - 2016-01-08: [1, 2, 3]
+  - 2016-01-09: [1, 2, 3]
+  - 2016-01-10: [1, 2, 3]
+  - 2016-01-11: [1, 2, 3]
+  - 2016-01-12: [1, 2   ]
+
+- $large$groups[g9r2]: true
+- $groups[g9r2]:
+    name: 9-2
+    timetable: *common-timetable
+
+- $large$groups[g9r1]: true
+- $groups[g9r1]:
+    name: 9-1
+    timetable: *common-timetable
+
+- $large$groups[g1011]: true
+- $groups[g1011]:
+    name: 10--11
+    timetable: *common-timetable
+
